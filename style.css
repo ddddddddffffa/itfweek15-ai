@@ -1,0 +1,298 @@
+:root {
+  --primary: #ff6b35;
+  --primary-dark: #e0521f;
+  --secondary: #ffb703;
+  --dark: #2b2d42;
+  --light: #fff8f0;
+  --muted: #6b7280;
+  --shadow: 0 20px 45px rgba(43, 45, 66, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Prompt", "Kanit", sans-serif;
+  background: var(--light);
+  color: var(--dark);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px 6%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 6px 24px rgba(43, 45, 66, 0.08);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Kanit", sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--dark);
+}
+
+.logo-icon {
+  font-size: 1.6rem;
+}
+
+.logo-text {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 999px;
+  transition: all 0.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--primary);
+  background: rgba(255, 107, 53, 0.12);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  text-align: center;
+  padding: 64px 6% 40px;
+  background: radial-gradient(circle at 50% 0%, #ffe6d5 0%, transparent 65%);
+}
+
+.hero h1 {
+  font-family: "Kanit", sans-serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.hero p {
+  margin-top: 12px;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: var(--muted);
+}
+
+/* ---------- Card ---------- */
+.container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 20px 6% 80px;
+}
+
+.card {
+  width: min(880px, 100%);
+  background: #fff;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 60px rgba(43, 45, 66, 0.2);
+}
+
+.card-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  min-height: 340px;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease, opacity 0.35s ease;
+}
+
+.card:hover .card-image {
+  transform: scale(1.05);
+}
+
+.card-image.fade {
+  opacity: 0.15;
+}
+
+.card-badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--primary-dark);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.card-body {
+  padding: 38px 36px;
+  display: flex;
+  flex-direction: column;
+}
+
+.food-name {
+  font-family: "Kanit", sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.food-desc {
+  color: var(--muted);
+  line-height: 1.75;
+  font-weight: 300;
+  flex: 1;
+}
+
+.card-footer {
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.food-price {
+  font-family: "Kanit", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* ---------- Button ---------- */
+.random-btn {
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  font-family: "Kanit", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #fff;
+  padding: 14px 30px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  box-shadow: 0 10px 24px rgba(255, 107, 53, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.random-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px rgba(255, 107, 53, 0.5);
+  filter: brightness(1.05);
+}
+
+.random-btn:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow: 0 6px 16px rgba(255, 107, 53, 0.4);
+}
+
+.random-btn.spin .btn-icon {
+  animation: spin 0.6s ease;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  text-align: center;
+  padding: 28px 6%;
+  background: var(--dark);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+/* ---------- Animation ---------- */
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pop {
+  animation: popIn 0.45s ease;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 760px) {
+  .nav-links {
+    display: none;
+  }
+
+  .card {
+    grid-template-columns: 1fr;
+  }
+
+  .card-image-wrapper {
+    min-height: 240px;
+  }
+
+  .card-body {
+    padding: 28px 24px;
+  }
+
+  .card-footer {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .random-btn {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .food-price {
+    text-align: center;
+  }
+}

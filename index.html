@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>สุ่มเมนูอาหาร | Random Menu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&family=Prompt:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-logo">
+      <span class="logo-icon">🍜</span>
+      <span class="logo-text">Random Menu</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home" class="active">หน้าแรก</a></li>
+      <li><a href="#menu">เมนูอาหาร</a></li>
+      <li><a href="#about">เกี่ยวกับ</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="hero-content">
+      <h1>ไม่รู้จะกินอะไรดี?</h1>
+      <p>ให้เราช่วยคุณสุ่มเมนูอาหารอร่อย ๆ ที่ถูกใจ</p>
+    </div>
+  </header>
+
+  <main class="container" id="menu">
+    <section class="card" id="foodCard">
+      <div class="card-image-wrapper">
+        <img
+          id="foodImage"
+          class="card-image"
+          src="https://images.unsplash.com/photo-1569562211093-4ed0d0758f12?auto=format&fit=crop&w=900&q=80"
+          alt="รูปเมนูอาหาร"
+        />
+        <span class="card-badge" id="foodBadge">เมนูแนะนำ</span>
+      </div>
+
+      <div class="card-body">
+        <h2 class="food-name" id="foodName">ผัดไทยกุ้งสด</h2>
+        <p class="food-desc" id="foodDesc">
+          เส้นผัดไทยเหนียวนุ่มคลุกซอสเปรี้ยวหวานมัน โรยกุ้งสด ถั่วลิสง และมะนาวสด
+          รสชาติกลมกล่อมแบบไทยแท้
+        </p>
+        <div class="card-footer">
+          <div class="food-price" id="foodPrice">฿120</div>
+          <button class="random-btn" id="randomBtn" type="button">
+            <span class="btn-icon">🎲</span> สุ่มเมนู
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="about">
+    <p>© 2026 Random Menu · สุ่มเมนูง่าย ๆ ให้ทุกมื้ออร่อย</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
